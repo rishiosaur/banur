@@ -18,10 +18,10 @@ import { ID } from 'type-graphql'
 @InputType()
 class CreateMessageInput {
 	@Field(() => String)
-	from: string
+	user: string
 
 	@Field(() => String)
-	message: string
+	content: string
 
 	@Field(() => String)
 	channel: string
@@ -30,7 +30,7 @@ class CreateMessageInput {
 @InputType()
 class UpdateMessageInput {
 	@Field(() => ID)
-	message: string
+	id: string
 
 	@Field(() => String)
 	content: string
@@ -56,14 +56,14 @@ export class MessageResolver {
 	async sendMessage(
 		@PubSub() pubSub: PubSubEngine,
 		@Arg('data')
-		{ from, message: _message, channel: _channel }: CreateMessageInput
+		{ user, content: _message, channel: _channel }: CreateMessageInput
 	) {
 		const message = new Message()
 		const channel = await Channel.findOneOrFail(_channel, {
 			relations: ['messages'],
 		})
 
-		message.user = from
+		message.user = user
 		message.content = _message
 		message.channel = channel
 
@@ -81,9 +81,9 @@ export class MessageResolver {
 		@PubSub() pubSub: PubSubEngine,
 		@Arg('data') data: UpdateMessageInput
 	) {
-		const message = await Message.findOneOrFail(data.message)
+		const message = await Message.findOneOrFail(data.id)
 
-		Object.assign(message, data as Omit<UpdateMessageInput, 'message'>)
+		Object.assign(message, data)
 
 		await message.save()
 

@@ -77,7 +77,9 @@ export class ChannelResolver {
 		return channel
 	}
 
-	@Mutation(() => Channel)
+	@Mutation(() => Channel, {
+		description: 'Create a channel with test data.',
+	})
 	async updateChannel(
 		@PubSub() pubSub: PubSubEngine,
 		@Arg('data') data: UpdateChannelInput
@@ -93,7 +95,10 @@ export class ChannelResolver {
 		return channel
 	}
 
-	@Mutation(() => Message)
+	@Mutation(() => Message, {
+		description:
+			'Delete a specific channel (erases all other entries & relationships with messages)',
+	})
 	async deleteChannel(
 		@PubSub() pubSub: PubSubEngine,
 		@Arg('channel') _channel: string
@@ -108,6 +113,7 @@ export class ChannelResolver {
 	@Subscription({
 		topics: SubscriptionTopics.CHANNELCREATION,
 		filter: ({ payload, args }) => (payload as Channel)?.id === args.channel,
+		description: 'Subscribe to channel creations.',
 	})
 	channelCreation(
 		@Root() messagePayload: Channel,
@@ -119,6 +125,7 @@ export class ChannelResolver {
 	@Subscription({
 		topics: SubscriptionTopics.CHANNELUPDATES,
 		filter: ({ payload, args }) => (payload as Channel)?.id === args.channel,
+		description: 'Subscribe to channel updates.',
 	})
 	channelUpdates(
 		@Root() messagePayload: Channel,
@@ -130,6 +137,7 @@ export class ChannelResolver {
 	@Subscription({
 		topics: SubscriptionTopics.CHANNELDELETION,
 		filter: ({ payload, args }) => (payload as Channel)?.id === args.channel,
+		description: 'Subscribe to channel deletions.',
 	})
 	channelDeletion(@Root() messagePayload: Channel): Channel {
 		return messagePayload

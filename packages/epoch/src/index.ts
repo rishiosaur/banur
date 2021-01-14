@@ -44,7 +44,6 @@ export class Epoch {
 
 		const schema = await buildSchema({
 			resolvers: [MessageResolver, ChannelResolver],
-			// authChecker: authChecker,
 			validate: false,
 		})
 
