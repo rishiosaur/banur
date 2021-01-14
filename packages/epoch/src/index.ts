@@ -17,14 +17,14 @@ betterLogging(console)
  * @class Epoch
  */
 export class Epoch {
-	private options: ConnectionOptions
+	private options: Omit<ConnectionOptions, 'type'>
 
 	/**
 	 * Creates an instance of Epoch.
 	 * @param {ConnectionOptions} options
 	 * @memberof Epoch
 	 */
-	constructor(options: ConnectionOptions) {
+	constructor(options: Omit<ConnectionOptions, 'type'>) {
 		this.options = options
 	}
 
@@ -38,7 +38,9 @@ export class Epoch {
 		await createConnection({
 			synchronize: true,
 			entities: [Message, Channel],
-			...this.options,
+			type: 'postgres'
+			...this.options as any,
+			
 		})
 
 		const schema = await buildSchema({
