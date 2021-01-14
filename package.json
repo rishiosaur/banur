@@ -12,5 +12,10 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-push": "lerna run check:fix"
+    }
+  }
 }
