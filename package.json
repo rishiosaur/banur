@@ -17,7 +17,16 @@
       "pre-push": "lerna run check:fix"
     }
   },
+  "scripts": {
+    "format": "lerna run format",
+    "format:check": "lerna run format:check",
+    "lint": "lerna run lint",
+    "lint:check": "lerna run lint:check",
+    "check": "lerna run check",
+    "check:fix": "lerna run check:fix"
+  },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "private": true
 }
