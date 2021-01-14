@@ -21,7 +21,7 @@ export class Epoch {
 
 	/**
 	 * Creates an instance of Epoch.
-	 * @param {ConnectionOptions} options
+	 * @param {url} string
 	 * @memberof Epoch
 	 */
 	constructor(url: string) {
