@@ -1,11 +1,15 @@
-# 💸 HN
+# 🌁 Epoch
 
-![lint status](https://github.com/rishiosaur/hn/workflows/lint/badge.svg)
-![format status](https://github.com/rishiosaur/hn/workflows/format/badge.svg)
-![build status](https://github.com/rishiosaur/hn/workflows/build/badge.svg)
-![GitHub](https://img.shields.io/github/license/rishiosaur/hn)
-![GitHub issues](https://img.shields.io/github/issues/rishiosaur/hn)
-![GitHub contributors](https://img.shields.io/github/contributors/rishiosaur/hn)
-![GitHub last commit](https://img.shields.io/github/last-commit/rishiosaur/hn)
+![lint status](https://github.com/rishiosaur/banur/workflows/lint/badge.svg)
+![format status](https://github.com/rishiosaur/banur/workflows/format/badge.svg)
+![build status](https://github.com/rishiosaur/banur/workflows/build/badge.svg)
+![GitHub](https://img.shields.io/github/license/rishiosaur/banur)
+![GitHub issues](https://img.shields.io/github/issues/rishiosaur/banur)
+![GitHub contributors](https://img.shields.io/github/contributors/rishiosaur/banur)
+![GitHub last commit](https://img.shields.io/github/last-commit/rishiosaur/banur)
 
-The most extendable Hack Club currency implementation.
+A reference implementation of the Banur Community server specification.
+
+## Getting started
+
+Run `npx banur epoch` to create an instance of an Epoch server on your local machine.
