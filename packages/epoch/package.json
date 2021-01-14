@@ -54,5 +54,5 @@
 		"check": "yarn run format:check && yarn run lint:check",
 		"check:fix": "yarn run format && yarn run lint"
 	},
-	"gitHead": "de16c3ec223ec92687e8a25d332e16096b789dfd"
+	"gitHead": "575fac85eced64e0c069c63e1d3f2ca364c43727"
 }
