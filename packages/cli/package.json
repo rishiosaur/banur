@@ -5,6 +5,7 @@
 	"bin": {
 		"banur": "dist/index.js"
 	},
+	"private": false,
 	"license": "MIT",
 	"dependencies": {
 		"@types/nodegit": "^0.26.12",
