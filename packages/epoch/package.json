@@ -54,7 +54,7 @@
 		"check": "yarn run format:check && yarn run lint:check",
 		"check:fix": "yarn run format && yarn run lint"
 	},
-	"gitHead": "a238949e21ddebec33fd28a15b83eae71376aa52",
+	"gitHead": "1fd41359bfe334e1a6c8d69c25677a0b31662717",
 	"publishConfig": {
 		"access": "public"
 	}
