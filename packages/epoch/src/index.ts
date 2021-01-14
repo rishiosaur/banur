@@ -4,6 +4,8 @@ import { ApolloServer } from 'apollo-server'
 import { buildSchema } from 'type-graphql'
 import { MessageResolver, ChannelResolver } from './resolvers/index'
 import betterLogging from 'better-logging'
+import Channel from './models/Channel'
+import Message from './models/Message'
 
 betterLogging(console)
 
@@ -16,7 +18,7 @@ export class Epoch {
 	public async start(port?: number) {
 		await createConnection({
 			synchronize: true,
-			entities: [`${__dirname}/src/models/*.ts`],
+			entities: [Message, Channel],
 			...this.options,
 		})
 
@@ -39,3 +41,10 @@ export class Epoch {
 		console.info('Epoch server has started.')
 	}
 }
+
+const cl = new Epoch({
+	type: 'postgres',
+	url: 'postgres://postgres@localhost:5455/postgres',
+})
+
+cl.start()
