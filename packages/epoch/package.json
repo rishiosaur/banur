@@ -4,6 +4,7 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"license": "MIT",
+	"private": false,
 	"dependencies": {
 		"@types/bcrypt": "^3.0.0",
 		"@types/express": "^4.17.8",
@@ -53,9 +54,5 @@
 		"check": "yarn run format:check && yarn run lint:check",
 		"check:fix": "yarn run format && yarn run lint"
 	},
-	"husky": {
-		"hooks": {
-			"pre-push": "yarn run check:fix"
-		}
-	}
+	"gitHead": "de16c3ec223ec92687e8a25d332e16096b789dfd"
 }
