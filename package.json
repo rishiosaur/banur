@@ -1,0 +1,16 @@
+{
+  "name": "banur",
+  "version": "0.0.0",
+  "description": "The federated social chat network.",
+  "main": "index.js",
+  "repository": "https://github.com/rishiosaur/banur.git",
+  "author": "Rishi Kothari",
+  "license": "MPL-2.0",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
