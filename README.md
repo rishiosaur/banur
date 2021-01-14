@@ -7,3 +7,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/rishiosaur/banur)
 ![GitHub contributors](https://img.shields.io/github/contributors/rishiosaur/banur)
 ![GitHub last commit](https://img.shields.io/github/last-commit/rishiosaur/banur)
+
+## Getting Started
+
+You can start up a server by using the Banur CLI (also packaged in this repository): `npx banur`.
