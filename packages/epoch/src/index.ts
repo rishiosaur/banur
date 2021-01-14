@@ -15,9 +15,9 @@ export class Epoch {
 
 	public async start(port?: number) {
 		await createConnection({
-			...this.options,
 			synchronize: true,
-			entities: ['./src/models/*.ts'],
+			entities: [`${__dirname}/src/models/*.ts`],
+			...this.options,
 		})
 
 		const schema = await buildSchema({
