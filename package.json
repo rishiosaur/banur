@@ -16,5 +16,8 @@
     "hooks": {
       "pre-push": "lerna run check:fix"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
