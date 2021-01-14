@@ -2,10 +2,11 @@ import 'reflect-metadata'
 import { ConnectionOptions, createConnection } from 'typeorm'
 import { ApolloServer } from 'apollo-server'
 import { buildSchema } from 'type-graphql'
-import { MessageResolver, ChannelResolver } from './resolvers/index'
 import betterLogging from 'better-logging'
 import Channel from './models/Channel'
 import Message from './models/Message'
+import { MessageResolver } from './resolvers/messages'
+import { ChannelResolver } from './resolvers/channels'
 
 betterLogging(console)
 
