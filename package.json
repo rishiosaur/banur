@@ -23,7 +23,8 @@
     "lint": "lerna run lint",
     "lint:check": "lerna run lint:check",
     "check": "lerna run check",
-    "check:fix": "lerna run check:fix"
+    "check:fix": "lerna run check:fix",
+    "build": "lerna run build"
   },
   "publishConfig": {
     "access": "public"

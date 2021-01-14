@@ -9,12 +9,30 @@ import Message from './models/Message'
 
 betterLogging(console)
 
+/**
+ * The Epoch server—a community server following the Banur specification.
+ *
+ * @export
+ * @class Epoch
+ */
 export class Epoch {
 	private options: ConnectionOptions
+
+	/**
+	 * Creates an instance of Epoch.
+	 * @param {ConnectionOptions} options
+	 * @memberof Epoch
+	 */
 	constructor(options: ConnectionOptions) {
 		this.options = options
 	}
 
+	/**
+	 * Starts an instance of a Banur server.
+	 *
+	 * @param {number} [port] Port to start server with.
+	 * @memberof Epoch
+	 */
 	public async start(port?: number) {
 		await createConnection({
 			synchronize: true,
@@ -41,10 +59,3 @@ export class Epoch {
 		console.info('Epoch server has started.')
 	}
 }
-
-const cl = new Epoch({
-	type: 'postgres',
-	url: 'postgres://postgres@localhost:5455/postgres',
-})
-
-cl.start()
