@@ -38,9 +38,8 @@ export class Epoch {
 		await createConnection({
 			synchronize: true,
 			entities: [Message, Channel],
-			type: 'postgres'
-			...this.options as any,
-			
+			type: 'postgres',
+			...(this.options as any),
 		})
 
 		const schema = await buildSchema({
