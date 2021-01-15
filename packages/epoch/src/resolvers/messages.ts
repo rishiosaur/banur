@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { PubSubEngine } from 'apollo-server'
 import {
 	InputType,
@@ -14,6 +15,9 @@ import Channel from '../models/Channel'
 import Message from '../models/Message'
 import { SubscriptionTopics } from './subscriptions'
 import { ID } from 'type-graphql'
+import betterLogging from 'better-logging'
+
+betterLogging(console)
 
 @InputType()
 class CreateMessageInput {
@@ -56,16 +60,14 @@ export class MessageResolver {
 	async sendMessage(
 		@PubSub() pubSub: PubSubEngine,
 		@Arg('data')
-		{ user, content: _message, channel: _channel }: CreateMessageInput
+		data: CreateMessageInput
 	) {
 		const message = new Message()
-		const channel = await Channel.findOneOrFail(_channel, {
+		const channel = await Channel.findOneOrFail(data.channel, {
 			relations: ['messages'],
 		})
 
-		message.user = user
-		message.content = _message
-		message.channel = channel
+		Object.assign(message, data)
 
 		channel.messages?.push(message)
 

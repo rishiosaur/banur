@@ -1,5 +1,5 @@
 import 'reflect-metadata'
-import { ConnectionOptions, createConnection } from 'typeorm'
+import { createConnection } from 'typeorm'
 import { ApolloServer } from 'apollo-server'
 import { buildSchema } from 'type-graphql'
 import betterLogging from 'better-logging'
