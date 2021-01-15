@@ -7,7 +7,7 @@
 ![build status](https://github.com/rishiosaur/banur/workflows/build/badge.svg)
 ![GitHub](https://img.shields.io/github/license/rishiosaur/banur)
 
-A tiny CLI to spin up a
+A tiny CLI that manages instances of Banur.
 
 ## Getting started
 
